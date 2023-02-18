@@ -18,6 +18,6 @@ int main(void)
 		putchar(upper_letter++);
 
 	putchar(10);
-	
+
 	return (0);
 }
