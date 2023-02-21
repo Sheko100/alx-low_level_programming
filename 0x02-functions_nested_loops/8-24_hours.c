@@ -16,20 +16,16 @@ void jack_bauer(void)
 
 	while (hourtens != 2 || hourones != 4)
 	{
-
 	_putchar(hourtens + '0');
 	_putchar(hourones + '0');
 	_putchar(':');
 	_putchar(mintens + '0');
 	_putchar(minones + '0');
 	_putchar(10);
-
-
 	if (minones == 9)
 	{
 		if (mintens == 5)
 		{
-			
 			if (hourones == 9)
 			{
 				hourones = 0;
@@ -45,14 +41,11 @@ void jack_bauer(void)
 		{
 			mintens++;
 		}
-
 		minones = 0;
 	}
 	else
 	{
 		minones++;
 	}
-
-
 	}
 }
