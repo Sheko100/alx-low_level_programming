@@ -9,7 +9,15 @@
 int _abs(int n)
 {
 	int result;
+	
+	if (n < 0)
+	{
+		result = n - n - n;
+	}
+	else
+	{
+		result = n;
+	}
 
-	result = n - n - n;
 	return (result);
 }
