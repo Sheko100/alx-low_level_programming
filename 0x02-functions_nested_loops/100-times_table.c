@@ -1,7 +1,8 @@
 #include "main.h"
 
 
-/** print_times_table - print the n times table starting with 0
+/**
+ * print_times_table - print the n times table starting with 0
  * @n: the number of times table
  *
  * Return: void always
@@ -9,78 +10,43 @@
 
 void print_times_table(int n)
 {
-	int r = 0;
-	int c;
-	int hundreds;
-	int tens;
-	int ones;
-	int delta = 0;
+	int r = n + 1, c, hundreds, tens, ones, delta = 0;
 
 	if (n < 15 && n > 0)
 	{
-		while (r < n)
+		while (r > 0)
 		{
-			c = 0, hundreds = 0, tens = 0, ones = 0;
-			while (c < n)
+			hundreds = 0, tens = 0, ones = 0, c = n + 1;
+			while (c > 0)
 			{
-
-				if ( c > 0 && c < n + 1)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-				
 				if (ones > 9)
 				{
-					ones = ones % 10;
-					tens++;
-					
+					ones = ones % 10, tens++;
 				}
-
-				if(c > 0)
+				if (tens > 9)
+				{ tens = tens % 10, hundreds++;
+				}
+				if (hundreds == 0)
+				{ _putchar(' ');
+				}
+				else
+				{ _putchar(hundreds + '0');
+				}
+				if (hundreds == 0 && tens == 0)
 				{
-
-					if (hundreds == 0)
+					if (c != n + 1)
 					{
 						_putchar(' ');
 					}
-					else
-					{
-						_putchar(hundreds + '0');
-					}
-
-					if (tens == 0)
-					{
-						_putchar(' ');
-					}
-					else if (tens > 9)
-					{
-						if (delta > 10)
-						{
-							tens = tens / 10;
-						}
-						else
-						{
-							tens = tens % 10;
-						}
-						hundreds++;
-						_putchar(hundreds + '0');
-						_putchar(tens + '0');
-					}
-					else
-					{
-						_putchar(tens + '0');
-					}
-
 				}
-				_putchar(ones + '0');
-				ones = ones + delta;
-				c++;
-			}
-			_putchar(10);
-			delta++;
-			r++;
+				else
+				{
+					_putchar(tens + '0');
+				} _putchar(ones + '0');
+				if (c > 1)
+				{ _putchar(','), _putchar(' ');
+				} ones = ones + delta, c--;
+			} _putchar(10), delta++, r--;
 		}
 	}
-
 }
