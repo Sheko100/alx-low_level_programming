@@ -20,6 +20,10 @@ int main(void)
 		{
 			printf(", ");
 		}
+		else
+		{
+			printf("\n");
+		}
 		num1 = num2;
 		num2 = num3;
 		i++;
