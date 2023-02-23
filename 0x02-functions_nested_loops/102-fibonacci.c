@@ -8,14 +8,14 @@
 
 int main(void)
 {
-	int num1 = 0, num2 = 1, num3 = 0;
+	long num1 = 0, num2 = 1, num3 = 0;
 	int i = 0;
 
 	while (i < 50)
 	{
 		num3 = num2 + num1;
 
-		printf("%d, ", num3);
+		printf("%lu, ", num3);
 		num1 = num2;
 		num2 = num3;
 		i++;
