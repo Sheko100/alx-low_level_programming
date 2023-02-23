@@ -15,7 +15,11 @@ int main(void)
 	{
 		num3 = num2 + num1;
 
-		printf("%lu, ", num3);
+		printf("%lu", num3);
+		if (i != 49)
+		{
+			printf(", ");
+		}
 		num1 = num2;
 		num2 = num3;
 		i++;
