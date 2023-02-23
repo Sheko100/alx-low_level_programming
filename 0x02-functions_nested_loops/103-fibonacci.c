@@ -9,6 +9,7 @@
 int main(void)
 {
 	int num1 = 0, num2 = 1, num3 = 0;
+	int sum = 0;
 
 	while (num3 < 4000000)
 	{
@@ -16,17 +17,13 @@ int main(void)
 		num1 = num2;
 		num2 = num3;
 
-		printf("%d", num3);
-
-		if (num3 != 5702887)
+		if (num3 % 2 == 0)
 		{
-			printf(", ");
-		}
-		else
-		{
-			printf("\n");
+			sum += num3;
 		}
 	}
+
+	printf("%d\n", sum);
 
 	return (0);
 }
