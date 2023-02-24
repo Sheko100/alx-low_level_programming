@@ -2,6 +2,8 @@
 
 /**
  * mul - multiplies two inetgers
+ * @a: first integer
+ * @b: second integer
  *
  * Return: result
  */
