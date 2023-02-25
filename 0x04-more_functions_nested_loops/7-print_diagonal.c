@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_diagonal - prints number of digonal \
- * @n: number of \ to print
+ * print_diagonal - prints number of digonal backslash
+ * @n: number of backslashes to print
  *
  * Return: void
  */
