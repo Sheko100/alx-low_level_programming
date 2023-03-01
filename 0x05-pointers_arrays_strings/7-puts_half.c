@@ -27,6 +27,7 @@ void puts_half(char *str)
 	else
 	{
 		lastchar = (len - 1) / 2;
+		lastchar++;
 	}
 
 	while (lastchar < len)
