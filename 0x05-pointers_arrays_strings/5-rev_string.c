@@ -9,8 +9,8 @@
 void rev_string(char *s)
 {
 	char *sp;
-	char revs[100];
 	char *revsp;
+	char revs[500];
 	int i = 0, l = 0;
 
 	revsp = revs;
