@@ -23,8 +23,7 @@ char *_strcpy(char *dest, char *src)
 	{
 		len++;
 	}
-
-	while (l < len)
+	while (l <= len)
 	{
 		*(destp + l) = *(srcp + l);
 		l++;
