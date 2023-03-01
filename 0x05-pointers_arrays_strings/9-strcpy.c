@@ -28,7 +28,15 @@ char *_strcpy(char *dest, char *src)
 		*(destp + l) = *(srcp + l);
 		l++;
 	}
-	*(destp + (l + 1)) = '\0';
+
+	if (l > 0)
+	{
+		*(destp + (l + 1)) = '\0';
+	}
+	else
+	{
+		*(destp + l) = '\0';
+	}
 
 	return (destp);
 }
