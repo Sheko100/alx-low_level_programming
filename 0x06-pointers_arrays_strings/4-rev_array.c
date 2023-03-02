@@ -10,22 +10,21 @@
 void reverse_array(int *a, int n)
 {
 	int *ap;
-	int *revap;
 	int i = 0;
-	int reva[2000];
+	int storednum;
 
 	ap = a;
-	revap = reva;
 
 	while (n > 0)
 	{
-		*(revap + i) = *(ap + (n - 1));
+		if (n <= i)
+		{
+			break;
+		}
+		storednum = *(ap + i);
+		*(ap + i) = *(ap + (n - 1));
+		*(ap + (n -1)) = storednum;
 		i++;
 		n--;
-	}
-	while (n < i)
-	{
-		*(ap + n) = *(revap + n);
-		n++;
 	}
 }
