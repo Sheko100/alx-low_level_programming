@@ -23,7 +23,7 @@ void reverse_array(int *a, int n)
 		}
 		storednum = *(ap + i);
 		*(ap + i) = *(ap + (n - 1));
-		*(ap + (n -1)) = storednum;
+		*(ap + (n - 1)) = storednum;
 		i++;
 		n--;
 	}
