@@ -12,7 +12,7 @@ void reverse_array(int *a, int n)
 	int *ap;
 	int *revap;
 	int i = 0;
-	int reva[200];
+	int reva[700];
 
 	ap = a;
 	revap = reva;
