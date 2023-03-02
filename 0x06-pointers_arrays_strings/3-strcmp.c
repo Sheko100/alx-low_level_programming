@@ -1,10 +1,10 @@
 
 /**
- * _strcpy - compares two strings
+ * _strcmp - compares two strings
  * @s1: first string
  * @s2: second string
  *
- * Return: more than, equal to, or less than 0 if the 
+ * Return: more than, equal to, or less than 0 if the
  * both strings lengthes match
  */
 
@@ -12,31 +12,26 @@ int _strcmp(char *s1, char *s2)
 {
 	char *sp1;
 	char *sp2;
-	int s1_len = 0, s2_len = 0;
+	int i = 0, res;
 
 	sp1 = s1;
 	sp2 = s2;
 
-	while (*(sp1 + s1_len) != '\0')
+	while (*(sp1 + i) && *(sp2 + i))
 	{
-		s1_len++;
+		if (*(sp1 + i) == *(sp2 + i))
+		{
+			res = 0;
+			i++;
+		}
+		else
+		{
+			res = *(sp1 + i) - *(sp2 + i);
+			break;
+		}
+
 	}
 
-	while (*(sp2 + s2_len) != '\0')
-	{
-		s2_len++;
-	}
+	return (res);
 
-	if (s2_len > s1_len)
-	{
-		return (-8);
-	}
-	else if (s2_len < s1_len)
-	{
-		return (8);
-	}
-	else
-	{
-		return (0);
-	}
 }
