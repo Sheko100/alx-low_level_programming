@@ -14,6 +14,8 @@ char *cap_string(char *str)
 
 	strp = str;
 
+	*strp = *strp - 32;
+
 	while (*(strp + i))
 	{
 		if (
