@@ -16,9 +16,10 @@ char *cap_string(char *str)
 
 	while (*(strp + i))
 	{
-		if (*(strp + i) == 32 || 
+		if (
+				*(strp + i) == 32 ||
 				*(strp + i) == 10 ||
-			       	*(strp + i) == 46 || 
+				*(strp + i) == 46 ||
 				*(strp + i) == 9 ||
 				*(strp + i) == 44 ||
 				*(strp + i) == 59 ||
@@ -28,7 +29,8 @@ char *cap_string(char *str)
 				*(strp + i) == 123 ||
 				*(strp + i) == 125 ||
 				*(strp + i) == 40 ||
-				*(strp + i) == 41
+				*(strp + i) == 41 ||
+				*(strp + i) == 11
 				)
 		{
 			fchar = *(strp + (i + 1));
