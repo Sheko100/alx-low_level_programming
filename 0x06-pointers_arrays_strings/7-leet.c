@@ -10,33 +10,22 @@ char *leet(char *str)
 {
 	char *strp;
 	int i = 0;
-	char c;
+	int l;
+	char c[] = {'a', 'e', 'o', 't', 'l'};
+	char n[] = {'4', '3', '0', '7', '1'};
 
 	strp = str;
 
 	while (*(strp + i))
 	{
-		c = *(strp + i);
-
-		if (c == 65 || c == 97)
+		l = 0;
+		while (l < 5)
 		{
-			*(strp + i) = 52;
-		}
-		else if (c == 84 || c == 116)
-		{
-			*(strp + i) = 55;
-		}
-		else if (c == 69 || c == 101)
-		{
-			*(strp + i) = 51;
-		}
-		else if (c == 79 || c == 111)
-		{
-			*(strp + i) = 48;
-		}
-		else if (c == 76 || c == 108)
-		{
-			*(strp + i) = 49;
+			if (*(strp + i) == c[l] || *(strp + i) == (c[l] - 32))
+			{
+				*(strp + i) = n[l];
+			}
+			l++;
 		}
 		i++;
 	}
