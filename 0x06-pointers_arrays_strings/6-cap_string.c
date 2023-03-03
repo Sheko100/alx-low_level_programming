@@ -14,8 +14,10 @@ char *cap_string(char *str)
 
 	strp = str;
 
-	*strp = *strp - 32;
-
+	if (*strp < 123 && *strp > 96)
+	{
+		*strp = *strp - 32;
+	}
 	while (*(strp + i))
 	{
 		if (
@@ -36,7 +38,6 @@ char *cap_string(char *str)
 				)
 		{
 			fchar = *(strp + (i + 1));
-
 			if (fchar < 123 && fchar > 96)
 			{
 				*(strp + (i + 1)) = fchar - 32;
