@@ -10,21 +10,23 @@
 
 int main(int argc, char *argv[])
 {
-	int sum = 0, i = 1;
+	int sum = 0, i = 1, l;
 
 	if (argc > 1)
 	{
 		while (i < argc)
 		{
-			if (*argv[i] > 47 && *argv[i] < 58)
+			l = 0;
+			while (argv[i][l])
 			{
+				if (argv[i][l] < 47 || argv[i][l] > 58)
+				{
+					printf("Error\n");
+					return (1);
+				}
+				l++;
+			}
 			sum = sum + atoi(argv[i]);
-			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
 			i++;
 		}
 		printf("%d\n", sum);
