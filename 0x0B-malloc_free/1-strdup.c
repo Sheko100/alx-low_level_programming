@@ -15,17 +15,19 @@ char *_strdup(char *str)
 	char *s;
 	int size = 0, i = 0;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	while (*(str + size))
 	{
 		size++;
 	}
 
+
 	s = malloc(size + 1);
 
-	if (str == NULL || s == NULL)
-	{
-		return NULL;
-	}
 
 	while (i < size)
 	{
