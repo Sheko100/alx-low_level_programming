@@ -15,7 +15,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd, n;
-	char buf[10000];
+	char buf[1000000];
 
 	fd = open(filename, O_RDWR, 0);
 
