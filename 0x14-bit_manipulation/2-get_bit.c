@@ -2,6 +2,23 @@
 #include "main.h"
 
 /**
+ * getlen - gets string length
+ * @s: string to get its length
+ *
+ * Return: string length
+ */
+
+int getlen(char *s)
+{
+	int len = 0;
+
+	while (s[len])
+		len++;
+
+	return (len);
+}
+
+/**
  * deci_to_bin - converts decimal to binary string
  * @n: decimal number to convert
  *
@@ -45,13 +62,16 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	int bit;
 	char *bin;
+	int len;
+
 
 	if (n == 0)
 		return (0);
 
 	bin = deci_to_bin(n);
+	len = getlen(bin);
 
-	if (bin == NULL)
+	if (index >= len)
 		return (-1);
 
 	if (bin[index] == '0')
