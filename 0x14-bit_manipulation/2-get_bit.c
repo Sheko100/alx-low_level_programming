@@ -1,16 +1,15 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * getlen - gets string length
+ * getlen - returns string length
  * @s: string to get its length
  *
  * Return: string length
  */
 
-int getlen(char *s)
+unsigned int getlen(char *s)
 {
-	int len = 0;
+	unsigned int len = 0;
 
 	while (s[len])
 		len++;
@@ -62,8 +61,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	int bit;
 	char *bin;
-	int len;
-
+	unsigned int len;
 
 	if (n == 0)
 		return (0);
