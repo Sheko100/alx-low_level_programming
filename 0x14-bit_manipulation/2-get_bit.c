@@ -46,6 +46,9 @@ int get_bit(unsigned long int n, unsigned int index)
 	int bit;
 	char *bin;
 
+	if (n == 0)
+		return (0);
+
 	bin = deci_to_bin(n);
 
 	if (bin == NULL)
