@@ -70,7 +70,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	len = getlen(bin);
 
 	if (index >= len)
-		return (-1);
+		return (0);
 
 	if (bin[index] == '0')
 		bit = 0;
