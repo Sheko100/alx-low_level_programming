@@ -6,13 +6,15 @@
  * @n: number to get the remainder
  *
  * Return: remainder of n
+ * -1 if the input is 0
  */
 
 int remain(unsigned long int n)
 {
 	if (n == 1)
 		return (1);
-
+	else if (n == 0)
+		return (-1);
 	while (n > 2)
 	{
 		n = n - 2;
@@ -58,12 +60,14 @@ void print_binary(unsigned long int n)
 
 	if (n == 0)
 	{
+		write(1, &zero, 1);
 		return;
 	}
 
 	rem = remain(n);
 	n = dividebytwo(n);
-	print_binary(n);
+	if (n > 0)
+		print_binary(n);
 	if (rem == 0)
 		write(1, &zero, 1);
 	else if (rem == 1)
