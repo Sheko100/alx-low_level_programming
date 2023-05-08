@@ -17,7 +17,7 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		printf(STDERR_FILENO, "Usage: %s elf_filename\n", av[0]);
+		printf("Usage: %s elf_filename\n", av[0]);
 		exit(97);
 	}
 	return (0);
