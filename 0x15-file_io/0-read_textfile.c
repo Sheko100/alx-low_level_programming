@@ -1,5 +1,13 @@
-#include <stdio.h>
 #include "main.h"
+
+/**
+ * read_textfile - reads file and write content to the standard output
+ * @filename: path to the file
+ * @letters: letters count to read
+ *
+ * Return: number of written letters on success
+ * 0 on errors
+ */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
