@@ -22,11 +22,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	readlen = read(fd, buf, letters);
-	if (readlen == 0)
+	if (readlen == -1)
 		return (0);
 
 	writelen = write(STDOUT_FILENO, buf, readlen);
-	if (writelen != readlen)
+	if (writelen == -1 || writelen != readlen)
 		return (0);
 
 
