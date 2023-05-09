@@ -12,7 +12,7 @@
 int isnull(const char *str)
 {
 	int isn, isu, isl, isend;
-	
+
 	if (str == NULL)
 		return (1);
 
