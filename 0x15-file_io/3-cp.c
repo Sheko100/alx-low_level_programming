@@ -77,11 +77,11 @@ int main(int ac, char **av)
 	int srcfd, destfd;
 	int perms = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	int rdlen;
-	char buf[1024];
+	char buf[2048];
 
 	if (ac != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", av[0]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -94,16 +94,18 @@ int main(int ac, char **av)
 	if (srcfd == -1)
 		rderr(av[1]);
 
-	rdlen = read(srcfd, buf, 1024);
-	if (rdlen == -1)
-		rderr(av[1]);
-
 	destfd = open(av[2], O_TRUNC | O_CREAT | O_WRONLY, perms);
 	if (destfd == -1)
 		wrerr(av[2]);
 
-	if (write(destfd, buf, rdlen) == -1)
-		wrerr(av[2]);
+	while ((rdlen = read(srcfd, buf, 1024)) > 0)
+	{
+		if (rdlen == -1)
+			rderr(av[1]);
+
+		if (write(destfd, buf, rdlen) == -1)
+			wrerr(av[2]);
+	}
 
 	if (close(srcfd))
 		clserr(srcfd);
