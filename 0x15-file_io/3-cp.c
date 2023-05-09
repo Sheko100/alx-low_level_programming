@@ -100,12 +100,12 @@ int main(int ac, char **av)
 
 	while ((rdlen = read(srcfd, buf, 1024)) > 0)
 	{
-		if (rdlen == -1)
-			rderr(av[1]);
 
 		if (write(destfd, buf, rdlen) == -1)
 			wrerr(av[2]);
 	}
+		if (rdlen == -1)
+			rderr(av[1]);
 
 	if (close(srcfd))
 		clserr(srcfd);
