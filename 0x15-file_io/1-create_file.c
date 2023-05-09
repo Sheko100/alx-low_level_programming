@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -14,12 +13,15 @@ int isnull(const char *str)
 {
 	int isn, isu, isl, isend;
 
+	if (str == NULL)
+		return (1);
+
 	isn = str[0] == 'N';
 	isu = str[1] == 'U';
 	isl = str[2] == 'L' && str[3] == 'L';
 	isend = str[4] == '\0';
 
-	if (isn && isu && isl && isend)
+	if ((isn && isu && isl && isend))
 		return (1);
 
 	return (0);
