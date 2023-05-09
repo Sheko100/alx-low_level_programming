@@ -35,7 +35,7 @@ int isnull(const char *str)
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd, readlen, writelen;
-	char buf[1024];
+	char buf[2048];
 
 	if (isnull(filename))
 		return (0);
