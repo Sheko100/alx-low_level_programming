@@ -12,6 +12,9 @@
 int isnull(const char *str)
 {
 	int isn, isu, isl, isend;
+	
+	if (str == NULL)
+		return (1);
 
 	isn = str[0] == 'N';
 	isu = str[1] == 'U';
