@@ -27,7 +27,8 @@ int wordcount(char *s)
 	return (count);
 }
 
-/** wordlen - gets the word length seperated by space
+/**
+ * wordlen - gets the word length seperated by space
  * @w: pointer to first char of word
  *
  * Return: word length
