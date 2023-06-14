@@ -55,12 +55,14 @@ int wordlen(char *w)
 char **strtow(char *str)
 {
 	char **words;
-	int i, w = 0, len = 0;
+	int i, count, w = 0, len = 0;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-
-	words = malloc((wordcount(str) + 1) * sizeof(char *));
+	count = wordcount(str);
+	if (count == 0)
+		return (NULL);
+	words = malloc((count + 1) * sizeof(char *));
 	if (words == NULL)
 		return (NULL);
 
