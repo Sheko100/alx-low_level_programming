@@ -18,7 +18,7 @@ int wordcount(char *s)
 		if (s[i] != ' ')
 		{
 			count++;
-			while (s[i] != ' ')
+			while (s[i] != ' ' && s[i] != '\0')
 				i++;
 			continue;
 		}
@@ -38,7 +38,7 @@ int wordlen(char *w)
 {
 	int len = 0;
 
-	while (w[len] != ' ')
+	while (w[len] != ' ' && w[len] != '\0')
 		len++;
 
 	return (len);
@@ -66,7 +66,6 @@ char **strtow(char *str)
 	if (words == NULL)
 		return (NULL);
 
-
 	while (*str)
 	{
 		if (*str != ' ')
@@ -76,7 +75,7 @@ char **strtow(char *str)
 			words[w] =  malloc(len + 1);
 			if (words[w] == NULL)
 				return (NULL);
-			while (*str != ' ')
+			while (*str != ' ' && *str != '\0')
 			{
 				words[w][i] = *str;
 				str++;
@@ -84,12 +83,11 @@ char **strtow(char *str)
 			}
 			words[w][i] = '\0';
 			w++;
+			continue;
 		}
 		str++;
 	}
 	words[w] = NULL;
-
-
 	return (words);
 }
 
