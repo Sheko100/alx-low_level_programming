@@ -83,7 +83,6 @@ int main(int ac, char **av)
 	}
 	if (isnum(av[1]) && isnum(av[2]))
 	{
-		res = atoi(av[1]) * atoi(av[2]);
 	}
 	else
 		err();
