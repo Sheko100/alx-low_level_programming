@@ -57,6 +57,7 @@ int isnum(char *s)
 void printnum(char *str)
 {
 	int i = 0;
+
 	while (str[i])
 	{
 		_putchar(str[i]);
@@ -87,6 +88,5 @@ int main(int ac, char **av)
 	else
 		err();
 
-	printf("%d\n", res);
 	return (0);
 }
