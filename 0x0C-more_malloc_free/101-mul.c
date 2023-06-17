@@ -74,7 +74,7 @@ void printnum(char *str)
 
 int main(int ac, char **av)
 {
-	int res;
+	long int res;
 
 	if (ac != 3)
 	{
@@ -82,8 +82,8 @@ int main(int ac, char **av)
 	}
 	if (isnum(av[1]) && isnum(av[2]))
 	{
-		res = atoi(av[1]) * atoi(av[2]);
-		printf("%d\n", res);
+		res = atol(av[1]) * atol(av[2]);
+		printf("%ld\n", res);
 	}
 	else
 		err();
