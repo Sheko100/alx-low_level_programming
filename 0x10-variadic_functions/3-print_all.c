@@ -10,7 +10,7 @@
 
 void print_char(void *c)
 {
-	printf("%c", *(char*)c);
+	printf("%c", *(char *)c);
 }
 
 /**
@@ -22,7 +22,7 @@ void print_char(void *c)
 
 void print_int(void *n)
 {
-	printf("%i", *(int*)n);
+	printf("%i", *(int *)n);
 }
 
 /**
@@ -34,7 +34,7 @@ void print_int(void *n)
 
 void print_float(void *f)
 {
-	printf("%f", *(float*)f);
+	printf("%f", *(float *)f);
 }
 
 /**
