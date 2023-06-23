@@ -47,9 +47,11 @@ void print_float(void *f)
 void print_str(void *s)
 {
 	if (s == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", (char *)s);
+		return;
+	}
+	printf("%s", (char *)s);
 }
 
 /**
