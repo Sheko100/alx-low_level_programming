@@ -90,4 +90,5 @@ void print_all(const char * const format, ...)
 		frmtp++;
 	}
 	va_end(ap);
+	printf("\n");
 }
