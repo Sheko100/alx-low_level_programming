@@ -5,6 +5,20 @@
 #include <unistd.h>
 #include <limits.h>
 
+/**
+ * union b - union for interger and its bytes
+ * @byte: string of num bytes
+ * @num: integer num
+ *
+ * Description: using it to check the endian
+ */
+
+union b
+{
+	char byte[4];
+	int num;
+};
+
 unsigned int binary_to_uint(const char *b);
 void print_binary(unsigned long int n);
 int get_bit(unsigned long int n, unsigned int index);
