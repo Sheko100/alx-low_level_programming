@@ -31,6 +31,7 @@ int remain(unsigned long int n)
 int dividebytwo(unsigned long int n)
 {
 	int i = 0;
+
 	while (n > 1)
 	{
 		n -= 2;
@@ -50,6 +51,7 @@ void print_binary(unsigned long int n)
 	int rem;
 	char zero = 48;
 	char one = 49;
+
 	if (n == 0)
 	{
 		write(1, &zero, 1);
