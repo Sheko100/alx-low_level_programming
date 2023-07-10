@@ -30,8 +30,12 @@ int create_file(const char *filename, char *text_content)
 		{
 			writebytes = write(fd, text_content, len);
 			if (writebytes == -1)
+			{
+				close(fd);
 				return (-1);
+			}
 		}
 	}
+	close(fd);
 	return (1);
 }
