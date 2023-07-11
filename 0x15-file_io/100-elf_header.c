@@ -175,6 +175,12 @@ int main(int ac, char **av)
 	int fd, readbytes;
 	char ident[EI_NIDENT];
 
+	if (ac != 2)
+	{
+		dprintf(STDERR_FILENO, "Usage: elf_header file_name\n");
+		exit(96);
+	}
+
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
 	{
