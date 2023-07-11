@@ -63,7 +63,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -73,7 +73,7 @@ int main(int ac, char **av)
 
 	destfd = open(av[2], destflags, destperms);
 	if (destfd == -1)
-		desterr(av[1]);
+		desterr(av[2]);
 
 	while ((readbytes = read(srcfd, buf, BUFSIZE)) > 0)
 	{
