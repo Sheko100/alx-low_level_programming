@@ -12,9 +12,9 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int hash, index, size;
+	unsigned long int index, size;
 	char *valuecpy = NULL, *keycpy = NULL;
-	hash_node_t **array = NULL, *hashnode = NULL, *temp = NULL;
+	hash_node_t **array = NULL, *hashnode = NULL;
 
 	size = ht->size;
 	array = ht->array;
@@ -41,7 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hashnode->value = valuecpy;
 	hashnode->next = NULL;
 
-	index = key_index(key, size);
+	index = key_index((unsigned char *)key, size);
 	if (array[index] != NULL)
 		hashnode->next = array[index];
 
