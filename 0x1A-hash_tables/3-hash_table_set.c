@@ -16,6 +16,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *valuecpy = NULL, *keycpy = NULL;
 	hash_node_t **array = NULL, *hashnode = NULL;
 
+	if (ht == NULL)
+		return (0);
 	size = ht->size;
 	array = ht->array;
 
