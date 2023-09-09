@@ -2,6 +2,34 @@
 #include <stdio.h>
 
 /**
+ * make_hash_node - creates a hash node
+ * @key: the key of the hash node
+ * @value: the value of the hash node
+ *
+ * Return: pointer to the new hash node on success
+ * NULL otherwiser
+ */
+hash_node_t *make_hash_node(const char *key, char *value)
+{
+	hash_node_t *hashnode = NULL;
+	char *keydup = NULL;
+
+	keydup = strdup(key);
+	if (keydup == NULL)
+		return (NULL);
+
+	hashnode = malloc(sizeof(hash_node_t));
+	if (hashnode == NULL)
+		return (NULL);
+
+	hashnode->key = keydup;
+	hashnode->value = value;
+	hashnode->next = NULL;
+
+	return (hashnode);
+}
+
+/**
  * hash_table_set - adds an element to the hash table
  * @ht: an array of hash table
  * @key: the key name
@@ -13,7 +41,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index, size;
-	char *valuecpy = NULL, *keycpy = NULL;
+	char *valuedup = NULL;
 	hash_node_t **array = NULL, *hashnode = NULL;
 
 	if (ht == NULL)
@@ -26,28 +54,22 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else if (strlen(key) < 1)
 		return (0);
 
-	keycpy = malloc(strlen(key) + 1);
-	if (keycpy == NULL)
+	valuedup = strdup(value);
+	if (valuedup == NULL)
 		return (0);
-	keycpy = strcpy(keycpy, key);
-
-	valuecpy = malloc(strlen(value) + 1);
-	if (valuecpy == NULL)
-		return (0);
-	valuecpy = strcpy(valuecpy, value);
-
-	hashnode = malloc(sizeof(hash_node_t));
-	if (hashnode == NULL)
-		return (0);
-	hashnode->key = keycpy;
-	hashnode->value = valuecpy;
-	hashnode->next = NULL;
 
 	index = key_index((unsigned char *)key, size);
-	if (array[index] != NULL)
-		hashnode->next = array[index];
-
-	array[index] = hashnode;
+	if (array[index] == NULL || strcmp(array[index]->key, key) != 0)
+	{
+		hashnode = make_hash_node(key, valuedup);
+		if (hashnode == NULL)
+			return (0);
+		if (array[index] != NULL)
+			hashnode->next = array[index];
+		array[index] = hashnode;
+	}
+	else
+		array[index]->value = valuedup;
 
 	return (1);
 }
