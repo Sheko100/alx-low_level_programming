@@ -3,9 +3,9 @@ SRC=main.c school.c
 OBJ=main.o school.o
 NAME=school
 
-all : school
+all : $(NAME)
 
-school : $(OBJ)
+$(NAME) : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 main.o : main.c
