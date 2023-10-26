@@ -8,5 +8,5 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o : %.c main.h
+%.o : %.c
 	$(CC) -c -o $@ $<
