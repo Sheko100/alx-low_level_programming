@@ -8,8 +8,5 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-main.o : main.c main.h
-	$(CC) -c main.c
-
-school.o : school.c main.h
-	$(CC) -c school.c
+%.o:%.c main.h
+	$(CC) -c $<
