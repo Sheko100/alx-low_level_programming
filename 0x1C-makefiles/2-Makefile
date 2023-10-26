@@ -9,4 +9,4 @@ $(NAME) : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 %.o : %.c main.h
-	$(CC)	-c $<
+	$(CC) -c -o $@ $<
