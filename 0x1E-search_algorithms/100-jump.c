@@ -34,21 +34,27 @@ int jump_search(int *array, size_t size, int value)
 
 	while (array[min(block, size) - 1] < value)
 	{
+		printf("Value checked array[%d] = [%d]\n", i, array[i]);
 		i = block;
 		block += sqrt(size);
 		if (i >= size)
 			return (-1);
 	}
+	printf("Value found between indexes [%ld] [%d]\n", block - i, i);
 
 	while (array[i] < value)
 	{
+		printf("Value checked array[%d] = [%d]\n", i, array[i]);
 		i++;
 		if (i == min(block, size))
 			return (-1);
 	}
 
 	if (array[i] == value)
+	{
+		printf("Value checked array[%d] = [%d]\n", i, array[i]);
 		return (i);
+	}
 
 	return (-1);
 }
